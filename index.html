@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>TODO-LIST</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -16,10 +16,7 @@
             <p>Software Engineer</p>
           </div>
         </div>
-        <div id ="time">
-          <!-- <p>Sabtu</p>
-          <p>27 September 2025</p> -->
-        </div>
+        <div id="time"></div>
       </header>
       <main>
         <section class="input-area">
@@ -34,16 +31,31 @@
           <div class="priority-group">
             <label>Level Prioritas Tugas</label>
             <div class="priority">
-              <button class="priority-btn">Low</button>
-              <button class="priority-btn">Medium</button>
-              <button class="priority-btn">High</button>
+              <button type="button" class="priority-btn low" data-priority="low">Low</button>
+              <button type="button" class="priority-btn medium" data-priority="medium">Medium</button>
+              <button type="button" class="priority-btn high" data-priority="high">High</button>
             </div>
           </div>
           <button id="submit-btn" class="submit-btn">Tambah Tugas</button>
         </section>
         <section class="todo-area">
-            <button>TODO</button>
-            <button>DONE</button>
+          <button>TODO</button>
+          <button>DONE</button>
+        </section>
+        <section class="task-area">
+          <div class="task-item done-task">
+            <input type="checkbox" class="task-checkbox" checked />
+            <div class="task-content">
+              <div class="task-text">lorem</div>
+              <div>
+                <span class="task-priority priority-${task.priority}">
+                  lorem
+                </span>
+                <span class="task-date">lorem</span>
+              </div>
+            </div>
+            <button class="delete-task-btn">Hapus</button>
+          </div>
         </section>
       </main>
     </div>

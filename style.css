@@ -64,16 +64,46 @@ header {
 .priority {
     margin-top: 10px;
     display: flex;
-    justify-content: space-around;
     gap: 1rem;
 }
+.priority-btn.active{
+    color: #fff;
+}
+
+.priority-btn.low.active {
+    background: green;
+    border-color: green;
+}
+
+.priority-btn.medium.active {
+    background: #ffc107;
+    border-color: #ffc107;
+}
+
+.priority-btn.high.active {
+    background: red;
+    border-color: red;
+}
+
 .priority button {
     padding: 1rem;
     border-radius: 5px;
-    background-color: #f1f1f1;
     width: 100%;
+    border: 2px solid #dee2e6;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+    font-weight: 500;
 }
-.submit-btn{
+
+.priority button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn {
     margin-top: 2rem;
     padding: 1rem;
     border-radius: 5px;
@@ -81,16 +111,83 @@ header {
     width: 100%;
 }
 
-.todo-area{
+.todo-area {
     margin-top: 2rem;
     display: flex;
     gap: 1rem;
     text-align: center;
     font-size: 20px;
 }
-.todo-area button{
+
+.todo-area button {
     width: 100%;
     height: 30px;
     border: none;
     background-color: #f1f1f1;
+}
+
+.task-area {
+    margin-top: 2rem;
+}
+
+.task-item {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s;
+    animation: slideIn 0.3s ease;
+}
+
+.task-checkbox {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-text {
+    font-size: 15px;
+    color: #212529;
+    margin-bottom: 5px;
+    word-break: break-word;
+}
+
+.task-priority {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+.task-date {
+    font-size: 12px;
+    color: #6c757d;
+    margin-left: 10px;
+}
+
+.delete-task-btn {
+    padding: 6px 12px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.delete-task-btn:hover {
+    background: #c82333;
+    transform: scale(1.05);
 }
