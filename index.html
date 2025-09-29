@@ -31,33 +31,69 @@
           <div class="priority-group">
             <label>Level Prioritas Tugas</label>
             <div class="priority">
-              <button type="button" class="priority-btn low" data-priority="low">Low</button>
-              <button type="button" class="priority-btn medium" data-priority="medium">Medium</button>
-              <button type="button" class="priority-btn high" data-priority="high">High</button>
+              <button
+                type="button"
+                class="priority-btn low"
+                data-priority="low"
+              >
+                Low
+              </button>
+              <button
+                type="button"
+                class="priority-btn medium"
+                data-priority="medium"
+              >
+                Medium
+              </button>
+              <button
+                type="button"
+                class="priority-btn high"
+                data-priority="high"
+              >
+                High
+              </button>
             </div>
           </div>
-          <button id="submit-btn" class="submit-btn">Tambah Tugas</button>
-        </section>
-        <section class="todo-area">
-          <button>TODO</button>
-          <button>DONE</button>
-        </section>
-        <section class="task-area">
-          <div class="task-item done-task">
-            <input type="checkbox" class="task-checkbox" checked />
-            <div class="task-content">
-              <div class="task-text">lorem</div>
-              <div>
-                <span class="task-priority priority-${task.priority}">
-                  lorem
-                </span>
-                <span class="task-date">lorem</span>
-              </div>
-            </div>
-            <button class="delete-task-btn">Hapus</button>
-          </div>
+          <button id="submit-btn" class="submit-btn" onclick="addTask()">
+            Tambah Tugas
+          </button>
         </section>
       </main>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('todo')">
+          To Do (<span id="todoCount">0</span>)
+        </button>
+        <button class="tab-btn" onclick="switchTab('done')">
+          Done (<span id="doneCount">0</span>)
+        </button>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <div id="todoTab" class="tab-pane active">
+          <div id="todoList"></div>
+          <button
+            class="delete-all-btn"
+            onclick="deleteAllTasks('todo')"
+            style="display: none"
+            id="deleteTodoBtn"
+          >
+            Hapus Semua To Do
+          </button>
+        </div>
+
+        <div id="doneTab" class="tab-pane">
+          <div id="doneList"></div>
+          <button
+            class="delete-all-btn"
+            onclick="deleteAllTasks('done')"
+            style="display: none"
+            id="deleteDoneBtn"
+          >
+            Hapus Semua Done
+          </button>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
